@@ -87,6 +87,7 @@ public class FloatingVideoService extends Service  {
   private long touchDownTime = -1;//触点按下时间
   private long lastSingleClickTime = -1;//上次发生点击的时刻
 
+  //public static boolean isEnableSeekbarAndSpped = true;
   public static SeekBar seekbar;
   public static boolean isChanging=false;//互斥变量，防止定时器与SeekBar拖动时进度冲突
   public static Timer mTimer;
@@ -296,6 +297,7 @@ public class FloatingVideoService extends Service  {
       //this_cordova.getActivity().finish();//关闭主窗口,回到手机的首页
 
       seekbar.setMax(mediaPlayer.getDuration());//设置进度条
+      //seekbar.setEnabled(isEnableSeekbarAndSpped);
       //----------定时器记录播放进度---------//
       mTimer = new Timer();
       mTimerTask = new TimerTask() {
